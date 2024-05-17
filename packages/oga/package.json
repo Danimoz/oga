@@ -1,0 +1,38 @@
+{
+  "name": "@repo/oga",
+  "version": "1.0.0",
+  "description": "Introspects your models and creates an Admin Page with CRUD Functionality",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "npm run build -- --watch"
+  },
+  "keywords": [
+    "NextJS",
+    "Prisma",
+    "Mongoose",
+    "Admin"
+  ],
+  "author": "Daniel Azubuine",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "clsx": "^2.1.1",
+    "mongoose": "^8.3.4",
+    "next": "^14.2.3",
+    "prisma": "^5.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.3.0"
+  }
+}
