@@ -1,4 +1,4 @@
-import { cn } from '../../lib/utils';
+import { cn } from "../../utils/utils";
 
 interface HeaderProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -10,7 +10,7 @@ export default function Header({ variant = 'h1', children, className }: HeaderPr
   const Tag = variant;
   return (
     <Tag 
-      className={className}
+      className={cn("oga-font-ojuju", `${className}`)}
     >
       {children}
     </Tag>);

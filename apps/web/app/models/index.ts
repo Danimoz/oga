@@ -14,7 +14,7 @@ const productSchema = new Schema<IProduct>({
 
 const postSchema = new Schema({
   title: { type: String, required: true },
-  content: { type: String, required: true }
+  content: { type: String, required: true, maxLength: 32 }
 });
 
 export const Product = mongoose.models.Product || mongoose.model<IProduct>('Product', productSchema);

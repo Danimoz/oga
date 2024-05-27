@@ -3,15 +3,13 @@ import { ModelAdapter, ModelDetails } from "./adapter";
 
 export class MongooseAdapter implements ModelAdapter {
   private models: { [key: string]: mongoose.Model<any> };
-  private mongooseInstance: typeof mongoose;
 
-  constructor(mongooseInstance: typeof mongoose, models: { [key: string]: mongoose.Model<any> } = {}) {
+  constructor(models: { [key: string]: mongoose.Model<any> } = {}) {
     this.models = models;
-    this.mongooseInstance = mongooseInstance;
   }
 
   async getModelByName(modelName: string) {
-    return this.mongooseInstance.model(modelName);
+    return this.models[modelName]
   }
 
   async getAllModels() {
@@ -19,7 +17,7 @@ export class MongooseAdapter implements ModelAdapter {
   }
 
   async getModelDetails(modelName: string): Promise<ModelDetails> {
-    const model = this.getModelByName(modelName);
+    /* const model = this.getModelByName(modelName);
 
     if (!model) {
       throw new Error(`Model ${modelName} not found`);
@@ -61,6 +59,7 @@ export class MongooseAdapter implements ModelAdapter {
       };
     });
     
-    return { fields: fieldDetails };
+    return { fields: fieldDetails }; */
+    return { fields: [] };
   }
 }

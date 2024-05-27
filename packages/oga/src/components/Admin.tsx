@@ -1,4 +1,5 @@
 import { OgaConfig } from "../types";
+import Dashboard from "./Dashboard";
 import Layout from "./Layout";
 
 type AdminProps = OgaConfig;
@@ -10,13 +11,17 @@ export function Admin({ orm, instance, models, params, searchParams }: AdminProp
     currentModel = models[params?.admin as string];
   }
 
+  const modelNames = Object.keys(models)
 
   return (
-    <Layout orm={orm} instance={instance} models={models}>
-      <div className="oga-grid-cols-2">
-        <h1>{params?.admin}</h1>
-        <pre>{JSON.stringify(currentModel, null, 2)}</pre>
-      </div>  
+    <Layout orm={orm} instance={instance} modelNames={modelNames} >
+      <Dashboard 
+        params={params} 
+        searchParams={searchParams}
+        modelNames={modelNames} 
+        orm={orm}
+        currentModel={currentModel} 
+      />
     </Layout>
   );
-}
+} 
